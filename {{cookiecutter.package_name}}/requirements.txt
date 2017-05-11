@@ -1,0 +1,7 @@
+coverage
+docopt
+flake8
+nose
+pypi-publisher
+pytest
+sphinx_rtd_theme

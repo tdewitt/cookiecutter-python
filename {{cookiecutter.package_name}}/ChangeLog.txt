@@ -1,0 +1,6 @@
+# History
+
+{{ cookiecutter.version }}
+------------------
+
+* First commit
