@@ -22,18 +22,26 @@ setup(
     version=__version__,
     description='{{cookiecutter.short_description}}',
     long_description=long_description,
-    url='https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}',
-    download_url='https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/tarball/' + __version__,
-    classifiers=[
-      'Programming Language :: Python :: 3',
-      'Intended Audience :: System Administrators',
-      'Development Status :: 3 - Alpha',
-    ],
-    keywords='',
-    packages=find_packages(exclude=['docs', 'tests*']),
-    include_package_data=True,
     author='{{cookiecutter.full_name}}',
+    author_email='{{cookiecutter.email}}',
+    url='https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}',
+    packages=find_packages(exclude=['docs', 'tests*']),
+    package_dir={'{{ cookiecutter.package_name }}':
+                 '{{ cookiecutter.package_name }}'},
+    entry_points=
+        'console_scripts': [
+            '{{ cookiecutter.package_name }}={{ cookiecutter.package_name }}.cli:main'
+        ]
+    },
+    include_package_data=True,
+    keywords='{{ cookiecutter.package_name }}',
+    include_package_data=True,
     install_requires=install_requires,
     dependency_links=dependency_links,
-    author_email='{{cookiecutter.email}}'
+    classifiers=[
+      'Development Status :: 3 - Alpha',
+      'Intended Audience :: System Administrators',
+      'Natural Language :: English',
+      'Programming Language :: Python',
+    ]
 )
