@@ -7,7 +7,7 @@ __version__ = '{{cookiecutter.version}}'
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 # get the dependencies and installs
@@ -28,14 +28,13 @@ setup(
     packages=find_packages(exclude=['docs', 'tests*']),
     package_dir={'{{ cookiecutter.package_name }}':
                  '{{ cookiecutter.package_name }}'},
-    entry_points=
+    entry_points={
         'console_scripts': [
             '{{ cookiecutter.package_name }}={{ cookiecutter.package_name }}.cli:main'
         ]
     },
     include_package_data=True,
     keywords='{{ cookiecutter.package_name }}',
-    include_package_data=True,
     install_requires=install_requires,
     dependency_links=dependency_links,
     classifiers=[
